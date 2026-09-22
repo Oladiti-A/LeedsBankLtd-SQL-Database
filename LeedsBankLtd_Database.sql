@@ -336,7 +336,7 @@ VALUES
 -- TransactionID 5 = James Loan Payment (overdue ~75 days)
 -- TransactionID 8 = Sara Credit Payment (overdue ~78 days)
 -- TransactionID 10 = Bob second Loan Payment (overdue ~45 days)
--- FeeAmount = £10 per day overdue
+-- FeeAmount = Â£10 per day overdue
 -- TotalOwed = FeeAmount x DaysOverdue
 -- OutstandingBalance = TotalOwed - TotalRepaid
 INSERT INTO OverdueFees
@@ -358,18 +358,18 @@ INSERT INTO Repayments
     (CustomerID, OverdueFeeID, RepaymentDateTime,
      Amount, PaymentMethod)
 VALUES
-    -- Bob paying OverdueFee 1 (£750 total) in instalments
+    -- Bob paying OverdueFee 1 (Â£750 total) in instalments
     (9, 1, '2024-02-15 10:00', 100.00, 'Bank Transfer'),
     (9, 1, '2024-03-01 14:00', 100.00, 'Card'),
 
-    -- James paying OverdueFee 2 (£1125 total) partially
+    -- James paying OverdueFee 2 (Â£1125 total) partially
     (11, 2, '2024-02-20 09:00', 100.00, 'Cash'),
 
-    -- Sara fully paying OverdueFee 3 (£780 total)
+    -- Sara fully paying OverdueFee 3 (Â£780 total)
     (8, 3, '2024-02-10 11:00', 390.00, 'Bank Transfer'),
     (8, 3, '2024-02-25 15:00', 390.00, 'Card'),
 
-    -- Bob paying OverdueFee 4 (£450 total) partially
+    -- Bob paying OverdueFee 4 (Â£450 total) partially
     (9, 4, '2024-03-05 10:00', 50.00,  'Bank Transfer'),
 
     -- Extra repayments for variety
@@ -662,7 +662,7 @@ BEGIN
         IF @@ROWCOUNT > 0
         BEGIN
             PRINT 'Account automatically closed 
-                   — final payment completed!'
+                   Â— final payment completed!'
         END
     END
 END;
