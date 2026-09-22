@@ -1,9 +1,8 @@
--- From the question, we have gotten our entities and we have created and ER diagram with it to know the table
--- we're creating for our DTABASE .
--- Let's create our database for the online banking. I will say the name of the online bank is 'LeedsBankLtd'
-CREATE DATABASE LeedsBankLtd
--- From our ER diagram, all our table obey the rules of 1NF,2NF, 3NF. 
--- Now we can proceed to create our table and the first table here is Addresses Table.
+-- LeedsBankLtd: Relational database for an online banking system
+-- Designed from an ER model and normalised to 3NF
+-- Author: Oladiti Abdulahi
+CREATE DATABASE LeedsBankLtd. 
+-- -- Table: Addresses.
 CREATE TABLE Addresses (AddressID int IDENTITY(1,1) NOT NULL,
 Address1 nvarchar (50) NOT NULL,
 Address2 nvarchar (50) NULL,
@@ -12,7 +11,7 @@ Postcode nvarchar (10) NOT NULL,
 Country nvarchar (50) NOT NULL DEFAULT 'UK',
 CONSTRAINT PK_Address PRIMARY KEY (AddressID));
 -- Now we proceed to create our customers Table
--- Stores all personal information about each bank customer
+-- Table: Customers
 -- Links to Addresses table via AddressID foreign key
 CREATE TABLE Customers (
 CustomerID int IDENTITY(1,1) NOT NULL,
